@@ -9,6 +9,7 @@ return {
         "prettier",
         "python-lsp-server",
         "texlab",
+        "grammarly-languageserver",
       },
     },
   },
