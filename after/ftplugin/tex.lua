@@ -5,3 +5,5 @@ local opt = vim.opt
 -- https://vimtricks.com/p/vim-spell-check/
 opt.spell = true
 opt.spelllang = { "en_us", "cjk" }
+
+vim.keymap.set("n", "<leader>C", ":update<CR>:VimtexCompileSS<CR>", { desc = "Latex Single Shot Compile" })
