@@ -66,7 +66,6 @@ return {
   },
   {
     "lervag/vimtex",
-    opt = true,
     config = function()
       vim.g.tex_flavor = "latex"
       if global.is_mac then
@@ -77,8 +76,6 @@ return {
       end
       if global.is_linux then
         vim.g.vimtex_view_method = "zathura"
-        -- vim.g.vimtex_view_general_viewer = "okular"
-        -- vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
       end
     end,
   },
