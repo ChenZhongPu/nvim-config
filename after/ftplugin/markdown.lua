@@ -39,3 +39,33 @@ vim.keymap.set("n", "<leader>h", function()
   )
   print("Export Markdown to HTML successfully!")
 end, { desc = "Pandoc HTML Export" })
+
+-- add snippet
+local ls = require("luasnip")
+local snip = ls.snippet
+local text = ls.text_node
+local insert = ls.insert_node
+local func = ls.function_node
+
+local date = function()
+  return { os.date("%Y-%m-%d") }
+end
+
+ls.add_snippets(nil, {
+  all = {
+    snip({
+      trig = "meta",
+      namr = "Metadata",
+      desc = "YAML metadata format for Markdown",
+    }, {
+      text({ "---", "title: " }),
+      insert(1, "note_title"),
+      text({ "", "author: " }),
+      insert(2, "CHEN Zhongpu"),
+      text({ "", "date: " }),
+      func(date, {}),
+      text({ "", "CJKmainfont: STKaiti", "---" }),
+      insert(0),
+    }),
+  },
+})
