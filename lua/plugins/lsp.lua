@@ -66,6 +66,7 @@ return {
   },
   {
     "lervag/vimtex",
+    ft = { "tex", "bib" },
     config = function()
       vim.g.tex_flavor = "latex"
       if global.is_mac then
