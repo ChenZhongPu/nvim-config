@@ -12,6 +12,7 @@ local parFullPath = vim.fn.expand("%:p:h")
 local fullPathWithoutType = vim.fn.expand("%:p:r")
 
 vim.keymap.set("n", "<leader>p", function()
+  vim.api.nvim_command("write")
   os.execute(
     "pandoc --pdf-engine=xelatex --highlight-style zenburn "
       .. "-H "
@@ -30,6 +31,7 @@ vim.keymap.set("n", "<leader>h", function()
   if not vim.loop.fs_stat(csspath) then
     vim.fn.system({ "cp", mdPath .. "/styling.css", csspath })
   end
+  vim.api.nvim_command("write")
   os.execute(
     "pandoc --standalone --mathjax -f markdown+emoji --css=styling.css --to=html5 "
       .. fullPath
@@ -64,7 +66,7 @@ ls.add_snippets(nil, {
       insert(2, "CHEN Zhongpu"),
       text({ "", "date: " }),
       func(date, {}),
-      text({ "", "CJKmainfont: STKaiti", "---" }),
+      text({ "", "CJKmainfont: LXGW WenKai", "---" }),
       insert(0),
     }),
   },
