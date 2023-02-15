@@ -1,12 +1,14 @@
 return {
   {
     "theHamsta/nvim-dap-virtual-text",
+    ft = { "python" },
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,
   },
   {
     "rcarriga/nvim-dap-ui",
+    ft = { "python" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local dap, dapui = require("dap"), require("dapui")
@@ -27,6 +29,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
+    ft = { "python" },
     config = function()
       local dap = require("dap")
       dap.adapters.python = {
@@ -42,18 +45,13 @@ return {
           name = "Launch file",
 
           -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-
           program = "${file}", -- This configuration will launch the current file if used.
           pythonPath = function()
-            local cwd = vim.fn.getcwd()
-            if os.getenv("VIRTUAL_ENV") == 1 then
-              return os.getenv("VIRTUAL_ENV") .. "/bin/python"
-            elseif vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
-              return cwd .. "/venv/bin/python"
-            elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
-              return cwd .. "/.venv/bin/python"
+            local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV")
+            if virtual then
+              return virtual .. "/bin/python3"
             else
-              return "/usr/bin/python"
+              return "/usr/bin/python3"
             end
           end,
         },
