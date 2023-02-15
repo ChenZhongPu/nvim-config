@@ -11,6 +11,7 @@ return {
         "flake8",
         "isort",
         "black",
+        "mypy",
         "texlab",
         "grammarly-languageserver",
         "debugpy",
