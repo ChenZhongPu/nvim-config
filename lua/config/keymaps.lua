@@ -5,6 +5,7 @@
 -- Togger a terminal
 vim.keymap.set("n", "<leader>T", ":ToggleTerm<CR>", { desc = "Toggle A Terminal" })
 
+-- Debug
 vim.keymap.set("n", "<leader>B", function()
   require("dap").toggle_breakpoint()
 end, {
@@ -22,3 +23,10 @@ end)
 vim.keymap.set("n", "<F12>", function()
   require("dap").step_out()
 end)
+
+-- Generate doc string
+vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
+  desc = "Generate Doc String",
+  noremap = true,
+  silent = true,
+})

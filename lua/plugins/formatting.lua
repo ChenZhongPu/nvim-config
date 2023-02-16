@@ -1,4 +1,24 @@
 return {
+  -- this is a bug for treesitter python indent
+  {
+    "Vimjas/vim-python-pep8-indent",
+    ft = { "python" },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      indent = {
+        enable = true,
+        disable = { "python" },
+      },
+    },
+  },
+  -- doc string
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+  },
   {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
