@@ -2,6 +2,7 @@ return {
   {
     "theHamsta/nvim-dap-virtual-text",
     ft = { "python" },
+    dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,

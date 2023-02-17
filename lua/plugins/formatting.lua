@@ -32,6 +32,7 @@ return {
           nls.builtins.formatting.isort,
           nls.builtins.formatting.black,
           nls.builtins.diagnostics.mypy,
+          nls.builtins.formatting.rustfmt,
         },
       }
     end,

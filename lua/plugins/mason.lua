@@ -12,6 +12,8 @@ return {
         "isort",
         "black",
         "mypy",
+        "rust-analyzer",
+        "rustfmt",
         "texlab",
         "grammarly-languageserver",
         "debugpy",
