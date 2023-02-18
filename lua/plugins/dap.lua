@@ -1,7 +1,9 @@
+local global = require("config.global")
+
 return {
   {
     "theHamsta/nvim-dap-virtual-text",
-    ft = { "python" },
+    ft = { "python", "rust" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       require("nvim-dap-virtual-text").setup()
@@ -9,7 +11,7 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
-    ft = { "python" },
+    ft = { "python", "rust" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local dap, dapui = require("dap"), require("dapui")
@@ -30,7 +32,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    ft = { "python" },
+    ft = { "python", "rust" },
     config = function()
       local dap = require("dap")
       dap.adapters.python = {
@@ -55,6 +57,41 @@ return {
               return "/usr/bin/python3"
             end
           end,
+        },
+      }
+      local port = 13000
+      local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
+      dap.adapters.codelldb = {
+        type = "server",
+        port = port,
+        executable = {
+          command = extension_path .. "adapter/codelldb",
+          args = { "--port", port },
+        },
+      }
+      -- local lldb_path = function()
+      --   if global.is_mac then
+      --     return "/opt/homebrew/opt/llvm/bin/"
+      --   end
+      --   return "/usr/bin/"
+      -- end
+      -- dap.adapters.lldb = {
+      --   type = "executable",
+      --   command = lldb_path() .. "lldb-vscode", -- adjust as needed, must be absolute path
+      --   name = "lldb",
+      -- }
+      dap.configurations.rust = {
+        {
+          name = "Launch file",
+          -- name = "Launch",
+          type = "codelldb",
+          -- type = "lldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
         },
       }
     end,
