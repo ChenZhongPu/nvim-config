@@ -12,7 +12,6 @@ return {
         "isort",
         "black",
         "mypy",
-        "rustfmt",
         "texlab",
         "grammarly-languageserver",
         "debugpy",
