@@ -82,19 +82,7 @@ return {
   },
   {
     "simrat39/rust-tools.nvim",
-    ft = { "rust" },
     config = function()
-      -- local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
-      -- local codelldb_path = extension_path .. "adapter/codelldb"
-      -- local ddl = function()
-      --   if global.is_mac then
-      --     return "dylib"
-      --   end
-      --   if global.is_linux then
-      --     return "so"
-      --   end
-      -- end
-      -- local liblldb_path = extension_path .. "lldb/lib/liblldb." .. ddl()
       local rt = require("rust-tools")
       rt.setup({
         server = {
@@ -115,9 +103,6 @@ return {
             },
           },
         },
-        -- dap = {
-        --   adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        -- },
       })
     end,
   },
