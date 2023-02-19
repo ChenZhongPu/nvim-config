@@ -60,12 +60,20 @@ return {
         },
       }
       local port = 13000
-      local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
+      local extention_path = function()
+        local extension_json =
+          vim.json.decode(vim.fn.readfile(vim.env.HOME .. "/.vscode/extensions/extensions.json")[1])
+        for _, v in pairs(extension_json) do
+          if v["identifier"]["id"] == "vadimcn.vscode-lldb" then
+            return v["location"]["path"]
+          end
+        end
+      end
       dap.adapters.codelldb = {
         type = "server",
         port = port,
         executable = {
-          command = extension_path .. "adapter/codelldb",
+          command = extention_path() .. "/adapter/codelldb",
           args = { "--port", port },
         },
       }
