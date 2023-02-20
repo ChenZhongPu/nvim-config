@@ -2,6 +2,10 @@ local global = require("config.global")
 
 return {
   {
+    -- used by rurst.tools to debug
+    "nvim-lua/plenary.nvim",
+  },
+  {
     "theHamsta/nvim-dap-virtual-text",
     ft = { "python", "rust" },
     dependencies = { "mfussenegger/nvim-dap" },

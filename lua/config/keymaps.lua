@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 -- Togger a terminal
-vim.keymap.set("n", "<leader>T", ":ToggleTerm<CR>", { desc = "Toggle A Terminal" })
+-- vim.keymap.set("n", "<leader>T", ":ToggleTerm<CR>", { desc = "Toggle a Terminal" })
 
 -- Debug
 vim.keymap.set("n", "<leader>B", function()
