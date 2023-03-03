@@ -14,8 +14,10 @@ return {
     },
     ensure_installed = {
       "bash",
+      "dockerfile",
       "help",
       "html",
+      "java",
       "javascript",
       "json",
       "lua",
@@ -45,6 +47,7 @@ return {
       return {
         sources = {
           nls.builtins.formatting.prettier,
+          nls.builtins.diagnostics.hadolint,
           nls.builtins.formatting.latexindent,
           nls.builtins.formatting.stylua,
           nls.builtins.diagnostics.flake8,

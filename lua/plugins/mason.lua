@@ -15,6 +15,7 @@ return {
         "texlab",
         "grammarly-languageserver",
         "debugpy",
+        "hadolint",
       },
     },
   },
