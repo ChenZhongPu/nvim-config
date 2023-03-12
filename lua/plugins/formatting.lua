@@ -21,6 +21,7 @@ return {
       "javascript",
       "json",
       "lua",
+      "latex",
       "markdown",
       "markdown_inline",
       "python",
