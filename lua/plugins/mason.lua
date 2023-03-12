@@ -13,7 +13,7 @@ return {
         "black",
         "mypy",
         "texlab",
-        "grammarly-languageserver",
+        "ltex-ls",
         "debugpy",
         "hadolint",
       },
