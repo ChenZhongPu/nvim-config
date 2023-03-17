@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Togger a terminal
--- vim.keymap.set("n", "<leader>T", ":ToggleTerm<CR>", { desc = "Toggle a Terminal" })
-
 -- Debug
 vim.keymap.set("n", "<leader>B", function()
   require("dap").toggle_breakpoint()
@@ -35,3 +32,6 @@ vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
 vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>", {
   desc = "Toggle Gitsigns Current Line Blame",
 })
+
+-- disable codeim key binding
+vim.g.codeium_disable_bindings = 1

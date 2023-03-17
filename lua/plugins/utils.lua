@@ -7,6 +7,24 @@ return {
       require("toggleterm").setup()
     end,
   },
+  -- AI Code
+  {
+    "Exafunction/codeium.vim",
+    config = function()
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<leader>]", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, desc = "Next codeium completion" })
+      vim.keymap.set("i", "<leader>[", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, desc = "Previous codeium completion" })
+      vim.keymap.set("i", "<C-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true })
+    end,
+  },
   -- To show hidden items
   {
     "nvim-neo-tree/neo-tree.nvim",
