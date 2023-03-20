@@ -35,3 +35,8 @@ vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>",
 
 -- disable codeim key binding
 vim.g.codeium_disable_bindings = 1
+
+-- disable Ctrl-n
+vim.keymap.set("i", "<C-n>", "<Nop>", { noremap = true, silent = true, nowait = true })
+
+vim.keymap.set("i", "<C-m>", "<Nop>", { noremap = true, silent = true, nowait = true })
