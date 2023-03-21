@@ -48,7 +48,8 @@ return {
       return {
         sources = {
           nls.builtins.formatting.prettier,
-          nls.builtins.diagnostics.hadolint,
+          nls.builtins.diagnostics.hadolint, -- for Docker
+          nls.builtins.formatting.taplo, -- for TOML
           nls.builtins.formatting.latexindent,
           nls.builtins.formatting.stylua,
           nls.builtins.diagnostics.flake8,

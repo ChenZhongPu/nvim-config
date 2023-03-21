@@ -15,7 +15,8 @@ return {
         "texlab",
         "ltex-ls",
         "debugpy",
-        "hadolint",
+        "hadolint", -- for Docker
+        "taplo", -- for TOML
       },
     },
   },
