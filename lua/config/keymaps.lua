@@ -40,5 +40,4 @@ vim.g.codeium_disable_bindings = 1
 vim.keymap.set("i", "<C-n>", "<Nop>", { noremap = true, silent = true, nowait = true })
 -- disable Ctrl-m
 vim.keymap.set("i", "<C-m>", "<Nop>", { noremap = true, silent = true, nowait = true })
--- Somehow <CR> not work
-vim.keymap.set("i", "<C-CR>", "<ESC>o", { noremap = true, silent = true, nowait = true })
+-- Somehow <CR> not work: use <C-j> instead

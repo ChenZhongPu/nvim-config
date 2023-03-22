@@ -1,17 +1,6 @@
 return {
-  -- this is a bug for treesitter python indent
-  {
-    "Vimjas/vim-python-pep8-indent",
-    ft = { "python" },
-  },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      indent = {
-        enable = true,
-        disable = { "python" },
-      },
-    },
     ensure_installed = {
       "bash",
       "dockerfile",
