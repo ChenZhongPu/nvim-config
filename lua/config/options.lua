@@ -6,3 +6,7 @@ vim.opt.spelllang = { "en_us", "cjk" }
 
 vim.wo.wrap = true
 vim.wo.linebreak = true
+
+vim.wo.foldmethod = "expr"
+vim.o.foldlevelstart = 10
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
