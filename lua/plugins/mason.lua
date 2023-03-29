@@ -17,6 +17,7 @@ return {
         "debugpy",
         "hadolint", -- for Docker
         "taplo", -- for TOML
+        "codelldb", -- no need vscode, for C, C++, Rust
       },
     },
   },

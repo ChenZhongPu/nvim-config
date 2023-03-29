@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     ensure_installed = {
       "bash",
+      "c",
       "dockerfile",
       "help",
       "html",

@@ -6,6 +6,9 @@ return {
     opts = {
       servers = {
         ltex = {},
+        clangd = {
+          mason = false,
+        }, -- for C, C++,
       },
     },
   },
@@ -30,16 +33,8 @@ return {
     ft = { "rust" },
     config = function()
       local rt = require("rust-tools")
-      local extention_path = function()
-        local extension_json =
-          vim.json.decode(vim.fn.readfile(vim.env.HOME .. "/.vscode/extensions/extensions.json")[1])
-        for _, v in pairs(extension_json) do
-          if v["identifier"]["id"] == "vadimcn.vscode-lldb" then
-            return v["location"]["path"]
-          end
-        end
-      end
-      local codelldb_path = extention_path() .. "/adapter/codelldb"
+      local extention_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension"
+      local codelldb_path = extention_path .. "/adapter/codelldb"
       local ddl_suffix = function()
         if global.is_mac then
           return ".dylib"
@@ -47,7 +42,7 @@ return {
           return ".so" -- linux
         end
       end
-      local liblldb_path = extention_path() .. "/lldb/lib/liblldb" .. ddl_suffix()
+      local liblldb_path = extention_path .. "/lldb/lib/liblldb" .. ddl_suffix()
       rt.setup({
         dap = {
           adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),

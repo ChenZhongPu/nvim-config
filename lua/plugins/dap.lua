@@ -3,7 +3,7 @@ local global = require("config.global")
 return {
   {
     "theHamsta/nvim-dap-virtual-text",
-    ft = { "python", "rust" },
+    ft = { "python", "rust", "c" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       require("nvim-dap-virtual-text").setup()
@@ -11,7 +11,7 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
-    ft = { "python", "rust" },
+    ft = { "python", "rust", "c" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local dap, dapui = require("dap"), require("dapui")
@@ -32,7 +32,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    ft = { "python", "rust" },
+    ft = { "python", "rust", "c" },
     config = function()
       local dap = require("dap")
       dap.adapters.python = {
@@ -60,20 +60,11 @@ return {
         },
       }
       local port = 13000
-      local extention_path = function()
-        local extension_json =
-          vim.json.decode(vim.fn.readfile(vim.env.HOME .. "/.vscode/extensions/extensions.json")[1])
-        for _, v in pairs(extension_json) do
-          if v["identifier"]["id"] == "vadimcn.vscode-lldb" then
-            return v["location"]["path"]
-          end
-        end
-      end
       dap.adapters.codelldb = {
         type = "server",
         port = port,
         executable = {
-          command = extention_path() .. "/adapter/codelldb",
+          command = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
           args = { "--port", port },
         },
       }
@@ -96,12 +87,16 @@ return {
           -- type = "lldb",
           request = "launch",
           program = function()
+            if vim.bo.filetype == "c" then
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            end
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
           cwd = "${workspaceFolder}",
           stopOnEntry = false,
         },
       }
+      dap.configurations.c = dap.configurations.rust
     end,
   },
 }
