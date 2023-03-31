@@ -88,7 +88,12 @@ return {
           request = "launch",
           program = function()
             if vim.bo.filetype == "c" then
-              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+              -- must a CMake project
+              -- print("CMake Building...")
+              -- os.execute("mkdir debug")
+              -- os.execute("cmake -Bdebug -DCMAKE_BUILD_TYPE=Debug .")
+              -- os.execute("cd debug && make && cd ..")
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/debug/", "file")
             end
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
