@@ -15,15 +15,6 @@ return {
       vim.keymap.set("i", "<C-g>", function()
         return vim.fn["codeium#Accept"]()
       end, { expr = true })
-      vim.keymap.set("i", "<C-n>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<C-m>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-      vim.keymap.set("i", "<C-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true })
     end,
   },
   -- To show hidden items
@@ -43,4 +34,14 @@ return {
     },
   },
   -- End: to show hidden items using neo-tree
+  -- add codeium status line
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, function()
+        return "🤖" .. vim.fn["codeium#GetStatusString"]()
+      end)
+    end,
+  },
 }
