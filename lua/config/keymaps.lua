@@ -35,9 +35,3 @@ vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>",
 
 -- disable codeim key binding to accept the suggnestion
 vim.g.codeium_no_map_tab = 1
-
--- disable Ctrl-n
--- vim.keymap.set("i", "<C-n>", "<Nop>", { noremap = true, silent = true, nowait = true })
--- disable Ctrl-m
--- vim.keymap.set("i", "<C-m>", "<Nop>", { noremap = true, silent = true, nowait = true })
--- Somehow <CR> not work: use <C-j> instead

@@ -1,7 +1,7 @@
 return {
   {
     "akinsho/toggleterm.nvim",
-    lazy = true,
+    event = "BufReadPost",
     keys = { { "<leader>T", "<cmd>ToggleTerm<cr>", desc = "Toggle a Terminal" } },
     config = function()
       require("toggleterm").setup()

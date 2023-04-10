@@ -8,7 +8,7 @@ return {
         ltex = {},
         clangd = {
           mason = false,
-        }, -- for C, C++,
+        }, -- for C, C++. Note that `clangd` is shipped with OS.
       },
     },
   },

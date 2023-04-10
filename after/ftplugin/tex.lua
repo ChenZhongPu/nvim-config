@@ -11,11 +11,10 @@ vim.keymap.set("n", "<leader>C", ":update<CR>:VimtexCompileSS<CR>", { desc = "La
 
 -- Copy template project
 local texPath = vim.fn.stdpath("config") .. "/third-party/tex"
-local fullPath = vim.fn.expand("%:p")
 
 vim.keymap.set(
   "n",
   "<leader>ip",
   ":.-1read " .. texPath .. "/project.tex<CR>",
-  { desc = "Import Project Tex Template " }
+  { desc = "Import Project Tex Template" }
 )
