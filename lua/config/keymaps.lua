@@ -35,5 +35,19 @@ vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>",
 
 -- disable codeim key binding to accept the suggnestion
 -- vim.g.codeium_no_map_tab = 1
--- vim.keymap.set("i", "<M-]>", "<Nop>", { noremap = true, silent = true, nowait = true })
--- vim.keymap.set("i", "<M-[>", "<Nop>", { noremap = true, silent = true, nowait = true })
+
+vim.keymap.set("i", "<M-[>", function()
+  require("copilot.suggestion").prev()
+end)
+
+vim.keymap.set("i", "<M-]>", function()
+  require("copilot.suggestion").next()
+end)
+
+vim.keymap.set("i", "<M-l>", function()
+  require("copilot.suggestion").accept()
+end)
+
+vim.keymap.set("i", "<C-]>", function()
+  require("copilot.suggestion").dismiss()
+end)
