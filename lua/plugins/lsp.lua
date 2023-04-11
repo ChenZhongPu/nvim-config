@@ -10,6 +10,11 @@ return {
           mason = false,
         }, -- for C, C++. Note that `clangd` is shipped with OS.
       },
+      setup = {
+        clangd = function(_, opts)
+          opts.capabilities.offsetEncoding = { "utf-16" } -- avoid clangd error with copilot
+        end,
+      },
     },
   },
   {

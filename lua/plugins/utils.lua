@@ -8,15 +8,15 @@ return {
     end,
   },
   -- AI Code
-  {
-    "Exafunction/codeium.vim",
-    event = "InsertEnter",
-    config = function()
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-    end,
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     vim.keymap.set("i", "<C-g>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true })
+  --   end,
+  -- },
   -- To show hidden items
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -35,12 +35,21 @@ return {
   },
   -- End: to show hidden items using neo-tree
   -- add codeium status line
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sections.lualine_x, function()
+  --       return "🤖" .. vim.fn["codeium#GetStatusString"]()
+  --     end)
+  --   end,
+  -- },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, function()
-        return "🤖" .. vim.fn["codeium#GetStatusString"]()
+        return "🤖" .. require("copilot.api").status.data.status
       end)
     end,
   },

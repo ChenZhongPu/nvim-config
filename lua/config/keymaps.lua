@@ -34,4 +34,6 @@ vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>",
 })
 
 -- disable codeim key binding to accept the suggnestion
-vim.g.codeium_no_map_tab = 1
+-- vim.g.codeium_no_map_tab = 1
+-- vim.keymap.set("i", "<M-]>", "<Nop>", { noremap = true, silent = true, nowait = true })
+-- vim.keymap.set("i", "<M-[>", "<Nop>", { noremap = true, silent = true, nowait = true })
