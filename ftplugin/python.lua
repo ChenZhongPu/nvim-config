@@ -11,4 +11,4 @@ vim.keymap.set("n", "<leader>R", function()
   local filePath = vim.fn.expand("%:p")
   local cmd = pythonPath() .. " " .. filePath
   vim.cmd('TermExec cmd="' .. cmd .. '"')
-end, { desc = "Run Python File" })
+end, { desc = "🐍Run Python File" })

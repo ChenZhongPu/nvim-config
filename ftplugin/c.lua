@@ -4,4 +4,4 @@ vim.keymap.set("n", "<leader>R", function()
   local compile = "clang -o build-foo " .. filePath .. " -Wall"
   local cmd = compile .. " && ./build-foo"
   vim.cmd('TermExec cmd="' .. cmd .. '"')
-end, { desc = "Run C/C++ File" })
+end, { desc = "💀Run C/C++ File" })

@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>p", function()
       .. "-export.pdf"
   )
   print("Export Markdown to PDF successfully!")
-end, { desc = "Pandoc PDF Export" })
+end, { desc = "📁Pandoc PDF Export" })
 
 vim.keymap.set("n", "<leader>h", function()
   local csspath = parFullPath .. "/styling.css"
@@ -40,7 +40,7 @@ vim.keymap.set("n", "<leader>h", function()
       .. "-export.html"
   )
   print("Export Markdown to HTML successfully!")
-end, { desc = "Pandoc HTML Export" })
+end, { desc = "🌎Pandoc HTML Export" })
 
 -- add snippet
 local ls = require("luasnip")
