@@ -12,6 +12,7 @@ return {
       "json",
       "lua",
       "latex",
+      "make",
       "markdown",
       "markdown_inline",
       "cmake",
