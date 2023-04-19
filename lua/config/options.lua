@@ -10,3 +10,8 @@ vim.wo.linebreak = true
 vim.wo.foldmethod = "expr"
 vim.o.foldlevelstart = 10
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- vim.o.tabstop = 4
+-- vim.o.shiftwidth = 4
+-- vim.o.softtabstop = 4
+-- vim.o.expandtab = true
