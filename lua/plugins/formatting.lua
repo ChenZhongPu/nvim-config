@@ -29,7 +29,7 @@ return {
   -- doc string
   {
     "danymat/neogen",
-    ft = { "python", "rust", "c" },
+    ft = { "python", "rust", "c", "h" },
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
   },

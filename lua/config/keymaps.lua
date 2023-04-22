@@ -23,14 +23,14 @@ end)
 
 -- Generate doc string
 vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
-  desc = "Generate Doc String",
+  desc = "🗎Generate Doc String",
   noremap = true,
   silent = true,
 })
 
 -- Toggle current line blames
 vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>", {
-  desc = "Toggle Gitsigns Current Line Blame",
+  desc = "Toggle Gitsigns Current Line Blame",
 })
 
 -- disable codeim key binding to accept the suggnestion
