@@ -96,16 +96,20 @@ return {
           type = "codelldb",
           request = "launch",
           program = function()
-            if not File_Exists("CMakeLists.txt") then
-              local filePath = vim.fn.expand("%:p")
-              local compile = C_COMPLIER[vim.bo.filetype] .. " -o build-debug " .. filePath .. " -g -Wall"
-              os.execute(compile)
-              return vim.fn.getcwd() .. "/build-debug"
-            else
+            if File_Exists("CMakeLists.txt") then
               -- it is CMake project
               os.execute("cmake -B debug -DCMAKE_BUILD_TYPE=Debug .")
               os.execute("cmake --build debug")
               return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/debug/", "file")
+            elseif File_Exists("Makefile") then
+              -- it is Makefile project, then you may need to generate debug first
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            else
+              -- it is a simple single file
+              local filePath = vim.fn.expand("%:p")
+              local compile = C_COMPLIER[vim.bo.filetype] .. " -o build-debug " .. filePath .. " -g -Wall"
+              os.execute(compile)
+              return vim.fn.getcwd() .. "/build-debug"
             end
           end,
           cwd = "${workspaceFolder}",
