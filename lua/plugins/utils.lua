@@ -2,7 +2,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     event = "BufReadPost",
-    keys = { { "<leader>T", "<cmd>ToggleTerm<cr>", desc = "Toggle a Terminal" } },
+    keys = { { "<leader>T", "<cmd>ToggleTerm<cr>", desc = "⌨⌨Toggle a Terminal" } },
     config = function()
       require("toggleterm").setup()
     end,

@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       "bash",
       "c",
+      "cpp",
       "dockerfile",
       "help",
       "html",
@@ -29,9 +30,16 @@ return {
   -- doc string
   {
     "danymat/neogen",
-    ft = { "python", "rust", "c", "h" },
+    ft = { "python", "rust", "c", "cpp" },
     dependencies = "nvim-treesitter/nvim-treesitter",
-    config = true,
+    config = function()
+      require("neogen").setup({})
+      vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
+        desc = "📝Generate Doc String",
+        noremap = true,
+        silent = true,
+      })
+    end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",

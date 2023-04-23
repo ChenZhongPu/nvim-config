@@ -1,17 +1,12 @@
-local global = require("config.global")
-
 return {
   {
     "theHamsta/nvim-dap-virtual-text",
-    ft = { "python", "rust", "c" },
+    ft = { "python", "rust", "c", "cpp" },
     dependencies = { "mfussenegger/nvim-dap" },
-    config = function()
-      require("nvim-dap-virtual-text").setup()
-    end,
   },
   {
     "rcarriga/nvim-dap-ui",
-    ft = { "python", "rust", "c" },
+    ft = { "python", "rust", "c", "cpp" },
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local dap, dapui = require("dap"), require("dapui")
@@ -32,8 +27,9 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    ft = { "python", "rust", "c" },
+    ft = { "python", "rust", "c", "cpp" },
     config = function()
+      require("nvim-dap-virtual-text").setup({ commented = true })
       local dap = require("dap")
       dap.adapters.python = {
         type = "executable",
@@ -87,19 +83,36 @@ return {
           -- type = "lldb",
           request = "launch",
           program = function()
-            if vim.bo.filetype == "c" then
-              -- must be a CMake project
-              os.execute("cmake -B debug -DCMAKE_BUILD_TYPE=Debug .")
-              os.execute("cmake --build debug")
-              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/debug/", "file")
-            end
+            -- for Rust, it should managed by Cargo
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
           cwd = "${workspaceFolder}",
           stopOnEntry = false,
         },
       }
-      dap.configurations.c = dap.configurations.rust
+      dap.configurations.c = {
+        {
+          name = "Launch file",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            if not File_Exists("CMakeLists.txt") then
+              local filePath = vim.fn.expand("%:p")
+              local compile = C_COMPLIER[vim.bo.filetype] .. " -o build-debug " .. filePath .. " -g -Wall"
+              os.execute(compile)
+              return vim.fn.getcwd() .. "/build-debug"
+            else
+              -- it is CMake project
+              os.execute("cmake -B debug -DCMAKE_BUILD_TYPE=Debug .")
+              os.execute("cmake --build debug")
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/debug/", "file")
+            end
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+        },
+      }
+      dap.configurations.cpp = dap.configurations.c
     end,
   },
 }

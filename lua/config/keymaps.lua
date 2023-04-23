@@ -6,7 +6,12 @@
 vim.keymap.set("n", "<leader>B", function()
   require("dap").toggle_breakpoint()
 end, {
-  desc = "Toggle Breakpoint",
+  desc = "🐛Toggle Debug Breakpoint",
+})
+vim.keymap.set("n", "<leader>S", function()
+  require("dap").terminate()
+end, {
+  desc = "🛑Terminate Debug",
 })
 vim.keymap.set("n", "<F5>", function()
   require("dap").continue()
@@ -20,13 +25,6 @@ end)
 vim.keymap.set("n", "<F12>", function()
   require("dap").step_out()
 end)
-
--- Generate doc string
-vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
-  desc = "🗎Generate Doc String",
-  noremap = true,
-  silent = true,
-})
 
 -- Toggle current line blames
 vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>", {

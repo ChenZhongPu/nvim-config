@@ -9,4 +9,14 @@ end
 
 global:load_variables()
 
+function File_Exists(filename)
+  local stat = vim.loop.fs_stat(filename)
+  return stat ~= nil and stat.type == "file"
+end
+
+C_COMPLIER = {
+  c = "clang",
+  cpp = "clang++",
+}
+
 return global
