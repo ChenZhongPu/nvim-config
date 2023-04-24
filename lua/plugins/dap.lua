@@ -31,6 +31,18 @@ return {
     config = function()
       require("nvim-dap-virtual-text").setup({ commented = true })
       local dap = require("dap")
+
+      vim.keymap.set("n", "<leader>B", function()
+        dap.toggle_breakpoint()
+      end, {
+        desc = "🐛Toggle Debug Breakpoint",
+      })
+      vim.keymap.set("n", "<leader>S", function()
+        dap.terminate()
+      end, {
+        desc = "🛑Terminate Debug",
+      })
+
       dap.adapters.python = {
         type = "executable",
         command = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python",
