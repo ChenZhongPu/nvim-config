@@ -5,6 +5,7 @@ return {
       "bash",
       "c",
       "cpp",
+      "cmake",
       "dockerfile",
       "help",
       "html",
@@ -16,7 +17,6 @@ return {
       "make",
       "markdown",
       "markdown_inline",
-      "cmake",
       "python",
       "query",
       "regex",
@@ -35,7 +35,7 @@ return {
     config = function()
       require("neogen").setup({})
       vim.keymap.set("n", "<leader>cD", ":lua require('neogen').generate()<CR>", {
-        desc = "📝Generate Doc String",
+        desc = "📄Generate Doc String",
         noremap = true,
         silent = true,
       })

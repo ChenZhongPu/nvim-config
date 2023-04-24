@@ -58,7 +58,7 @@ return {
               "n",
               "<Leader>a",
               rt.hover_actions.hover_actions,
-              { buffer = buffer, desc = "Rust Tools Hover Actions" }
+              { buffer = buffer, desc = "👋🦀Rust Tools Hover Actions" }
             )
           end,
           settings = {
