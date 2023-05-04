@@ -52,8 +52,10 @@ return {
           nls.builtins.formatting.taplo, -- for TOML
           nls.builtins.formatting.latexindent,
           nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.flake8,
-          nls.builtins.formatting.isort,
+          -- nls.builtins.diagnostics.flake8,
+          -- nls.builtins.formatting.isort,
+          nls.builtins.diagnostics.ruff,
+          nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
           nls.builtins.diagnostics.mypy,
           nls.builtins.formatting.rustfmt.with({
