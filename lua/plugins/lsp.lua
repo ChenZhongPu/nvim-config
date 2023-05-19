@@ -9,6 +9,7 @@ return {
         clangd = {
           mason = false,
         }, -- for C, C++. Note that `clangd` is shipped with OS.
+        pyright = {},
       },
       setup = {
         clangd = function(_, opts)

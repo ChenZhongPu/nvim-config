@@ -57,7 +57,7 @@ return {
           nls.builtins.diagnostics.ruff,
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
-          nls.builtins.diagnostics.mypy,
+          -- nls.builtins.diagnostics.mypy,
           nls.builtins.formatting.rustfmt.with({
             extra_args = function(params)
               local Path = require("plenary.path")

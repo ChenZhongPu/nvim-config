@@ -38,3 +38,5 @@ end)
 vim.keymap.set("i", "<C-]>", function()
   require("copilot.suggestion").dismiss()
 end)
+
+vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle!<CR>", { desc = "🌲Toggle Code Outline" })

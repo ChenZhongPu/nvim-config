@@ -55,30 +55,12 @@ return {
   -- },
   {
     "stevearc/aerial.nvim",
-    ft = { "python", "rust", "c", "cpp", "tex", "markdown" },
+    -- ft = { "python", "rust", "c", "cpp", "tex", "markdown" },
     opts = {},
     -- Optional dependencies
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("aerial").setup({
-        filter_kind = {
-          ["_"] = {
-            "Class",
-            "Constructor",
-            "Enum",
-            "Function",
-            "Interface",
-            "Module",
-            "Method",
-            "Struct",
-          },
-          tex = { "Method" },
-        },
-      })
-      vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle!<CR>", { desc = "🌲Toggle Code Outline" })
-    end,
   },
 }
