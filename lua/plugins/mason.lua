@@ -8,7 +8,6 @@ return {
         "shfmt",
         "prettier",
         "pyright",
-        "pyre",
         "jedi-language-server",
         -- "flake8",
         -- "isort",

@@ -56,6 +56,7 @@ return {
   {
     "stevearc/aerial.nvim",
     -- ft = { "python", "rust", "c", "cpp", "tex", "markdown" },
+    event = "BufReadPost",
     opts = {},
     -- Optional dependencies
     dependencies = {
