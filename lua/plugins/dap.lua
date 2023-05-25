@@ -75,17 +75,6 @@ return {
           args = { "--port", port },
         },
       }
-      -- local lldb_path = function()
-      --   if global.is_mac then
-      --     return "/opt/homebrew/opt/llvm/bin/"
-      --   end
-      --   return "/usr/bin/"
-      -- end
-      -- dap.adapters.lldb = {
-      --   type = "executable",
-      --   command = lldb_path() .. "lldb-vscode", -- adjust as needed, must be absolute path
-      --   name = "lldb",
-      -- }
       dap.configurations.rust = {
         {
           name = "Launch file",
@@ -94,7 +83,7 @@ return {
           -- type = "lldb",
           request = "launch",
           program = function()
-            -- for Rust, it should managed by Cargo
+            -- for Rust, it should be managed by Cargo
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
           cwd = "${workspaceFolder}",

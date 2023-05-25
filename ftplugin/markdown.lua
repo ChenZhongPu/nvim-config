@@ -57,7 +57,6 @@ ls.add_snippets(nil, {
   all = {
     snip({
       trig = "meta",
-      namr = "Metadata",
       desc = "YAML metadata format for Markdown",
     }, {
       text({ "---", "title: " }),

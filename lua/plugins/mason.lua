@@ -9,19 +9,17 @@ return {
         "prettier",
         "pyright",
         "jedi-language-server",
-        -- "flake8",
-        -- "isort",
         "ruff",
         "ruff-lsp",
         "black",
-        -- "mypy",
         "texlab",
         "ltex-ls",
-        "debugpy",
+        "debugpy", -- for Python debugger
         "hadolint", -- for Docker
         "taplo", -- for TOML
         "codelldb", -- no need vscode, for C, C++, Rust
         "cmake-language-server",
+        "rust-analyzer",
       },
     },
   },

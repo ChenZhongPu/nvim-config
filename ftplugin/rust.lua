@@ -1,4 +1,4 @@
 vim.keymap.set("n", "<leader>R", function()
   vim.cmd("write")
-  require("rust-tools").runnables.runnables()
+  vim.cmd('TermExec cmd="cargo run"')
 end, { desc = "🦀Run Rust Project" })

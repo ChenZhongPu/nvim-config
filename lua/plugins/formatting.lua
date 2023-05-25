@@ -21,6 +21,7 @@ return {
       "query",
       "regex",
       "rust",
+      "toml",
       "tsx",
       "typescript",
       "vim",
@@ -52,12 +53,10 @@ return {
           nls.builtins.formatting.taplo, -- for TOML
           nls.builtins.formatting.latexindent,
           nls.builtins.formatting.stylua,
-          -- nls.builtins.diagnostics.flake8,
-          -- nls.builtins.formatting.isort,
           nls.builtins.diagnostics.ruff,
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
-          -- nls.builtins.diagnostics.mypy,
+          -- note that the default rustfmt edition is 2015
           nls.builtins.formatting.rustfmt.with({
             extra_args = function(params)
               local Path = require("plenary.path")
