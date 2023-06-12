@@ -13,15 +13,15 @@ return {
         clangd = function(_, opts)
           opts.capabilities.offsetEncoding = { "utf-16" } -- avoid clangd error with copilot
         end,
-        -- rust_analyzer = function(_, opts)
-        --   opts.settings = {
-        --     ["rust-analyzer"] = {
-        --       checkOnSave = {
-        --         command = "clippy",
-        --       },
-        --     },
-        --   }
-        -- end,
+        rust_analyzer = function(_, opts)
+          opts.settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = {
+                command = "clippy",
+              },
+            },
+          }
+        end,
       },
     },
   },
