@@ -44,18 +44,9 @@ return {
   --     end)
   --   end,
   -- },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     table.insert(opts.sections.lualine_x, function()
-  --       return "🤖" .. require("copilot.api").status.data.status
-  --     end)
-  --   end,
-  -- },
   {
     "stevearc/aerial.nvim",
-    -- ft = { "python", "rust", "c", "cpp", "tex", "markdown" },
+    ft = { "python", "rust", "c", "cpp", "tex", "markdown" },
     event = "BufReadPost",
     opts = {},
     -- Optional dependencies
@@ -63,5 +54,12 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
+  },
+  {
+    "lvimuser/lsp-inlayhints.nvim",
+    ft = { "rust" },
+    config = function()
+      require("lsp-inlayhints").setup()
+    end,
   },
 }

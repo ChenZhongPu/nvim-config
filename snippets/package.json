@@ -5,6 +5,17 @@
       {
         "language": "tex",
         "path": "latex.json"
+      },
+      {
+        "language": "make",
+        "path": "makefile.json"
+      },
+      {
+        "language": [
+          "c",
+          "cpp"
+        ],
+        "path": "c.json"
       }
     ]
   }
