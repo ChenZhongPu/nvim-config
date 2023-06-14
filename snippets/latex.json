@@ -27,6 +27,24 @@
       "\\end{tikzpicture}",
       "\\end{document}",
       "${0}"
-    ]
+    ],
+    "description": "Creates a standalone tikz document"
+  },
+  "documentCN": {
+    "prefix": "documentcn",
+    "body": [
+      "\\documentclass{article}",
+      "\\usepackage{xeCJK}",
+      "\\usepackage{amsmath}",
+      "\\title{${1:title}}",
+      "\\author{${2:author}}",
+      "\\date{\\today}",
+      "\\begin{document}",
+      "\\maketitle",
+      "${3}",
+      "\\end{document}",
+      "${0}"
+    ],
+    "description": "Creates a Chinese document with math"
   }
 }
