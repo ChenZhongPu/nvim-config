@@ -58,6 +58,26 @@ return {
           nls.builtins.diagnostics.ruff,
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
+          nls.builtins.diagnostics.mypy.with({
+            args = function(params)
+              local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
+              return {
+                "--python-executable=" .. virtual .. "/bin/python3",
+                "--hide-error-codes",
+                "--hide-error-context",
+                "--no-color-output",
+                "--show-absolute-path",
+                "--show-column-numbers",
+                "--show-error-codes",
+                "--no-error-summary",
+                "--no-pretty",
+                "--shadow-file",
+                params.bufname,
+                params.temp_path,
+                params.bufname,
+              }
+            end,
+          }),
           -- note that the default rustfmt edition is 2015
           nls.builtins.formatting.rustfmt.with({
             extra_args = function(params)
