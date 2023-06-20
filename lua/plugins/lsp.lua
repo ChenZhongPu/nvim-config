@@ -30,6 +30,7 @@ return {
     ft = { "tex", "bib" },
     config = function()
       vim.g.tex_flavor = "latex"
+      vim.g.vimtex_quickfix_open_on_warning = 0
       if global.is_mac then
         vim.g.vimtex_view_method = "skim"
         vim.g.vimtex_view_skim_sync = 1
