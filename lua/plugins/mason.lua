@@ -7,7 +7,7 @@ return {
         "shellcheck",
         "shfmt",
         "prettier",
-        -- "pyright",
+        "djlint",
         "jedi-language-server",
         "mypy",
         "ruff",
