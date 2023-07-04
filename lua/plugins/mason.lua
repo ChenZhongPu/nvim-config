@@ -3,10 +3,10 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "prettierd",
         "stylua",
         "shellcheck",
         "shfmt",
-        "prettier",
         "djlint",
         "jedi-language-server",
         "mypy",

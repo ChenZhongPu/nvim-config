@@ -50,7 +50,7 @@ return {
       local nls = require("null-ls")
       return {
         sources = {
-          nls.builtins.formatting.prettier,
+          nls.builtins.formatting.prettierd,
           nls.builtins.formatting.djlint,
           nls.builtins.diagnostics.hadolint, -- for Docker
           nls.builtins.formatting.taplo, -- for TOML
