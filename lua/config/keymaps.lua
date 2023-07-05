@@ -20,6 +20,20 @@ vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>",
   desc = "Toggle Gitsigns Current Line Blame",
 })
 
+-- Toggle a Terminal
+vim.keymap.set("n", "<leader>T", function()
+  require("toggleterm").toggle()
+end, {
+  desc = "⌨⌨Toggle a Terminal",
+})
+
+-- Toggle a LazyDocker
+vim.keymap.set("n", "<leader>dc", function()
+  require("config.term").docker_client_toggle()
+end, {
+  desc = "🐳Toggle LazyDocker Client",
+})
+
 -- disable codeim key binding to accept the suggnestion
 -- vim.g.codeium_no_map_tab = 1
 
