@@ -7,9 +7,9 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "djlint",
+        "djlint", -- for Django and Flask templates
         "jedi-language-server",
-        "mypy",
+        -- "mypy",
         "ruff",
         "ruff-lsp",
         "black",

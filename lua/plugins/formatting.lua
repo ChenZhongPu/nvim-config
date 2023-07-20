@@ -13,6 +13,8 @@ return {
         "java",
         "javascript",
         "json",
+        "json5",
+        "jsonc",
         "lua",
         "latex",
         "make",
@@ -51,7 +53,7 @@ return {
       return {
         sources = {
           nls.builtins.formatting.prettierd,
-          nls.builtins.formatting.djlint,
+          nls.builtins.formatting.djlint, -- for Django and Flask templates
           nls.builtins.diagnostics.hadolint, -- for Docker
           nls.builtins.formatting.taplo, -- for TOML
           nls.builtins.formatting.latexindent,
@@ -62,12 +64,12 @@ return {
           }),
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
-          nls.builtins.diagnostics.mypy.with({
-            extra_args = function()
-              local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
-              return { "--python-executable", virtual .. "/bin/python3" }
-            end,
-          }),
+          -- nls.builtins.diagnostics.mypy.with({
+          --   extra_args = function()
+          --     local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
+          --     return { "--python-executable", virtual .. "/bin/python3" }
+          --   end,
+          -- }),
           -- note that the default rustfmt edition is 2015
           nls.builtins.formatting.rustfmt.with({
             extra_args = function(params)
