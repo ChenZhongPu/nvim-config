@@ -5,22 +5,16 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        clangd = {
-          mason = false,
-        }, -- for C, C++. Note that `clangd` is shipped with OS.
+        jedi_language_server = {},
       },
       setup = {
-        clangd = function(_, opts)
-          opts.capabilities.offsetEncoding = { "utf-16" } -- avoid clangd error with copilot
-        end,
-        rust_analyzer = function(_, opts)
-          opts.settings = {
-            ["rust-analyzer"] = {
-              checkOnSave = {
-                command = "clippy",
-              },
-            },
-          }
+        pyright = function()
+          require("lazyvim.util").on_attach(function(client, _)
+            if client.name == "pyright" then
+              -- disable hover in favor of jedi-language-server
+              client.server_capabilities.hoverProvider = false
+            end
+          end)
         end,
       },
     },

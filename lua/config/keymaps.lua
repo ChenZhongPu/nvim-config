@@ -28,7 +28,7 @@ end, {
 })
 
 -- Toggle a LazyDocker
-vim.keymap.set("n", "<leader>dc", function()
+vim.keymap.set("n", "<leader>D", function()
   require("config.term").docker_client_toggle()
 end, {
   desc = "🐳Toggle LazyDocker Client",
@@ -52,5 +52,3 @@ end)
 vim.keymap.set("i", "<C-]>", function()
   require("copilot.suggestion").dismiss()
 end)
-
-vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle!<CR>", { desc = "🌲Toggle Code Outline" })

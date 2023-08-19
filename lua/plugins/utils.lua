@@ -17,21 +17,6 @@ return {
   --     end, { expr = true })
   --   end,
   -- },
-  -- To show hidden items
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        bind_to_cwd = false,
-        follow_current_file = true,
-        use_libuv_file_watcher = true,
-        filtered_items = {
-          hide_dotfiles = false,
-        },
-      },
-    },
-  },
-  -- End: to show hidden items using neo-tree
   -- add codeium status line
   -- {
   --   "nvim-lualine/lualine.nvim",
@@ -42,22 +27,30 @@ return {
   --     end)
   --   end,
   -- },
+  -- {
+  --   "stevearc/aerial.nvim",
+  --   ft = { "python", "rust", "c", "cpp", "markdown" },
+  --   event = "BufReadPost",
+  --   opts = {},
+  --   -- Optional dependencies
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  -- },
   {
-    "stevearc/aerial.nvim",
-    ft = { "python", "rust", "c", "cpp", "markdown" },
-    event = "BufReadPost",
-    opts = {},
-    -- Optional dependencies
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "🕊Symbols Outline" } },
+    opts = {
+      -- add your options that should be passed to the setup() function here
+      position = "right",
     },
   },
   {
-    "lvimuser/lsp-inlayhints.nvim",
-    ft = { "rust" },
-    config = function()
-      require("lsp-inlayhints").setup()
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      opts.sections.lualine_z = {}
     end,
   },
 }
