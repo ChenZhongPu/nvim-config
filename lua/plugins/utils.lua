@@ -27,17 +27,6 @@ return {
   --     end)
   --   end,
   -- },
-  -- {
-  --   "stevearc/aerial.nvim",
-  --   ft = { "python", "rust", "c", "cpp", "markdown" },
-  --   event = "BufReadPost",
-  --   opts = {},
-  --   -- Optional dependencies
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  -- },
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
@@ -49,6 +38,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
+    -- remove time
     opts = function(_, opts)
       opts.sections.lualine_z = {}
     end,

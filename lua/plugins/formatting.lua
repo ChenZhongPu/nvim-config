@@ -1,12 +1,12 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "cpp", "cmake" })
-      end
-    end,
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = function(_, opts)
+  --     if type(opts.ensure_installed) == "table" then
+  --       vim.list_extend(opts.ensure_installed, { "cmake" })
+  --     end
+  --   end,
+  -- },
   -- doc string
   {
     "danymat/neogen",
@@ -26,7 +26,7 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       table.insert(opts.sources, nls.builtins.formatting.djlint)
-      -- table.insert(opts.sources, nls.builtins.formatting.taplo)
+      -- latexindent should be installed externally
       table.insert(opts.sources, nls.builtins.formatting.latexindent)
       table.insert(
         opts.sources,
