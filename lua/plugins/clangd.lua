@@ -1,3 +1,5 @@
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/clangd.lua
+-- mason: false (to use OS-shipped clangd)
 return {
 
   -- Add C/C++ to treesitter
