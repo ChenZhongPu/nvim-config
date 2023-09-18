@@ -2,7 +2,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     event = "BufReadPost",
-    keys = { { "<leader>T", "<cmd>ToggleTerm<cr>", desc = "⌨⌨Toggle a Terminal" } },
+    keys = { { "<leader>T", "<cmd>ToggleTerm<cr>", desc = "Toggle a Terminal" } },
     config = function()
       require("toggleterm").setup()
     end,
@@ -30,7 +30,7 @@ return {
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "🕊Symbols Outline" } },
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "🌲Symbols Outline" } },
     opts = {
       -- add your options that should be passed to the setup() function here
       position = "right",
