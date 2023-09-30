@@ -18,5 +18,5 @@ end, { desc = "🔖Import Simple Project (English) Tex" })
 
 vim.keymap.set("n", "<leader>Ih", function()
   os.execute("cp " .. texPath .. "/.latexmkrc " .. vim.fn.expand("%:p:h") .. "/.latexmkrc")
-  vim.cmd(":.-1read " .. texPath .. "/project.tex")
+  vim.cmd(":.-1read " .. texPath .. "/homework.tex")
 end, { desc = "🏡Import Simple Homework Tex" })
