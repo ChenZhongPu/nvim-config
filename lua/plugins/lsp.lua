@@ -6,6 +6,7 @@ return {
     opts = {
       servers = {
         jedi_language_server = {},
+        clangd = { mason = false },
       },
       setup = {
         pyright = function()
