@@ -10,7 +10,7 @@ return {
       },
       setup = {
         pyright = function()
-          require("lazyvim.util").on_attach(function(client, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
             if client.name == "pyright" then
               -- disable hover in favor of jedi-language-server
               client.server_capabilities.hoverProvider = false
