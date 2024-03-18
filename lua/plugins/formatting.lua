@@ -27,14 +27,14 @@ return {
       local nls = require("null-ls")
       table.insert(opts.sources, nls.builtins.formatting.djlint)
       -- latexindent should be installed externally
-      table.insert(opts.sources, nls.builtins.formatting.latexindent)
-      table.insert(
-        opts.sources,
-        nls.builtins.diagnostics.ruff.with({
-          extra_args = { "--select", "N" },
-        })
-      )
-      table.insert(opts.sources, nls.builtins.formatting.ruff)
+      -- table.insert(opts.sources, nls.builtins.formatting.latexindent)
+      -- table.insert(
+      --   opts.sources,
+      --   nls.builtins.diagnostics.ruff.with({
+      --     extra_args = { "--select", "N" },
+      --   })
+      -- )
+      -- table.insert(opts.sources, nls.builtins.formatting.ruff)
       table.insert(opts.sources, nls.builtins.formatting.black)
       table.insert(
         opts.sources,
@@ -45,24 +45,24 @@ return {
           end,
         })
       )
-      table.insert(
-        opts.sources,
-        nls.builtins.formatting.rustfmt.with({
-          extra_args = function(params)
-            local Path = require("plenary.path")
-            local cargo_toml = Path:new(params.root .. "/" .. "Cargo.toml")
-            if cargo_toml:exists() and cargo_toml:is_file() then
-              for _, line in ipairs(cargo_toml:readlines()) do
-                local edition = line:match([[^edition%s*=%s*%"(%d+)%"]])
-                if edition then
-                  return { "--edition=" .. edition }
-                end
-              end
-            end
-            return { "--edition=2021" }
-          end,
-        })
-      )
+      -- table.insert(
+      --   opts.sources,
+      --   nls.builtins.formatting.rustfmt.with({
+      --     extra_args = function(params)
+      --       local Path = require("plenary.path")
+      --       local cargo_toml = Path:new(params.root .. "/" .. "Cargo.toml")
+      --       if cargo_toml:exists() and cargo_toml:is_file() then
+      --         for _, line in ipairs(cargo_toml:readlines()) do
+      --           local edition = line:match([[^edition%s*=%s*%"(%d+)%"]])
+      --           if edition then
+      --             return { "--edition=" .. edition }
+      --           end
+      --         end
+      --       end
+      --       return { "--edition=2021" }
+      --     end,
+      --   })
+      -- )
     end,
   },
 }
