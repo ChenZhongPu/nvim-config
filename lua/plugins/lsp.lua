@@ -2,29 +2,6 @@ local global = require("config.global")
 
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        pyright = {
-          mason = false,
-          autostart = false,
-        },
-        jedi_language_server = {},
-        clangd = { mason = false },
-      },
-      setup = {
-        -- pyright = function()
-        --   require("lazyvim.util").lsp.on_attach(function(client, _)
-        --     if client.name == "pyright" then
-        --       -- disable hover in favor of jedi-language-server
-        --       client.server_capabilities.hoverProvider = false
-        --     end
-        --   end)
-        -- end,
-      },
-    },
-  },
-  {
     "lervag/vimtex",
     init = function()
       vim.g.vimtex_quickfix_open_on_warning = 0
