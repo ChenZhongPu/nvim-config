@@ -2,37 +2,30 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<F5>", function()
-  require("dap").continue()
-end)
-vim.keymap.set("n", "<F10>", function()
-  require("dap").step_over()
-end)
-vim.keymap.set("n", "<F11>", function()
-  require("dap").step_into()
-end)
-vim.keymap.set("n", "<F12>", function()
-  require("dap").step_out()
-end)
+-- vim.keymap.set("n", "<F5>", function()
+--   require("dap").continue()
+-- end)
+-- vim.keymap.set("n", "<F10>", function()
+--   require("dap").step_over()
+-- end)
+-- vim.keymap.set("n", "<F11>", function()
+--   require("dap").step_into()
+-- end)
+-- vim.keymap.set("n", "<F12>", function()
+--   require("dap").step_out()
+-- end)
 
 -- Toggle current line blames
 vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>", {
   desc = "Toggle Gitsigns Current Line Blame",
 })
 
--- Toggle a Terminal
-vim.keymap.set("n", "<leader>T", function()
-  require("toggleterm").toggle()
-end, {
-  desc = "⌨⌨Toggle a Terminal",
-})
-
 -- Toggle a LazyDocker
-vim.keymap.set("n", "<leader>D", function()
-  require("config.term").docker_client_toggle()
-end, {
-  desc = "🐳Toggle LazyDocker Client",
-})
+-- vim.keymap.set("n", "<leader>D", function()
+--   require("config.term").docker_client_toggle()
+-- end, {
+--   desc = "🐳Toggle LazyDocker Client",
+-- })
 
 -- disable codeim key binding to accept the suggnestion
 -- vim.g.codeium_no_map_tab = 1

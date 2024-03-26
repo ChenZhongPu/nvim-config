@@ -1,17 +1,17 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
-    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lsp.none-ls",
-    "lazyvim.plugins.extras.ui.mini-animate"
+    "lazyvim.plugins.extras.ui.mini-animate",
+    "lazyvim.plugins.extras.editor.aerial"
   ],
   "news": {
-    "NEWS.md": "2123"
+    "NEWS.md": "2590"
   },
   "version": 3
 }
