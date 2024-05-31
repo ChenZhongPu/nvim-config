@@ -1,7 +1,0 @@
-{
-  "cunittest": {
-    "prefix": "cunitest",
-    "body": ["Test(${1}, ${0}) { cr_assert(1); }"],
-    "description": "New UnitTest using Criterion"
-  }
-}

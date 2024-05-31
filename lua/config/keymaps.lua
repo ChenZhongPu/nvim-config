@@ -15,20 +15,6 @@
 --   require("dap").step_out()
 -- end)
 
--- Toggle current line blames
-vim.keymap.set("n", "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<cr>", {
-  desc = "Toggle Gitsigns Current Line Blame",
-})
-
--- Toggle a LazyDocker
--- vim.keymap.set("n", "<leader>D", function()
---   require("config.term").docker_client_toggle()
--- end, {
---   desc = "🐳Toggle LazyDocker Client",
--- })
-
--- disable codeim key binding to accept the suggnestion
--- vim.g.codeium_no_map_tab = 1
 
 vim.keymap.set("i", "<M-[>", function()
   require("copilot.suggestion").prev()

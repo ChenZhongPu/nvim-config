@@ -11,7 +11,7 @@ local fullPath = vim.fn.expand("%:p")
 local parFullPath = vim.fn.expand("%:p:h")
 local fullPathWithoutType = vim.fn.expand("%:p:r")
 
-vim.keymap.set("n", "<leader>p", function()
+vim.keymap.set("n", "<leader>fP", function()
   vim.api.nvim_command("write")
   os.execute(
     "pandoc --pdf-engine=xelatex --highlight-style zenburn "
@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>p", function()
   print("Export Markdown to PDF successfully!")
 end, { desc = "📚Pandoc PDF Export" })
 
-vim.keymap.set("n", "<leader>h", function()
+vim.keymap.set("n", "<leader>fH", function()
   local csspath = parFullPath .. "/styling.css"
   if not vim.loop.fs_stat(csspath) then
     vim.fn.system({ "cp", mdPath .. "/styling.css", csspath })
@@ -43,30 +43,30 @@ vim.keymap.set("n", "<leader>h", function()
 end, { desc = "🌐Pandoc HTML Export" })
 
 -- add snippet
-local ls = require("luasnip")
-local snip = ls.snippet
-local text = ls.text_node
-local insert = ls.insert_node
-local func = ls.function_node
+-- local ls = require("luasnip")
+-- local snip = ls.snippet
+-- local text = ls.text_node
+-- local insert = ls.insert_node
+-- local func = ls.function_node
 
-local date = function()
-  return { os.date("%Y-%m-%d") }
-end
+-- local date = function()
+--   return { os.date("%Y-%m-%d") }
+-- end
 
-ls.add_snippets(nil, {
-  all = {
-    snip({
-      trig = "meta",
-      desc = "YAML metadata format for Markdown",
-    }, {
-      text({ "---", "title: " }),
-      insert(1, "note_title"),
-      text({ "", "author: " }),
-      insert(2, "CHEN Zhongpu"),
-      text({ "", "date: " }),
-      func(date, {}),
-      text({ "", "CJKmainfont: LXGW WenKai", "---" }),
-      insert(0),
-    }),
-  },
-})
+-- ls.add_snippets(nil, {
+--   all = {
+--     snip({
+--       trig = "meta",
+--       desc = "YAML metadata format for Markdown",
+--     }, {
+--       text({ "---", "title: " }),
+--       insert(1, "note_title"),
+--       text({ "", "author: " }),
+--       insert(2, "CHEN Zhongpu"),
+--       text({ "", "date: " }),
+--       func(date, {}),
+--       text({ "", "CJKmainfont: LXGW WenKai", "---" }),
+--       insert(0),
+--     }),
+--   },
+-- })
