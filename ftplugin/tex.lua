@@ -7,4 +7,4 @@ opt.spell = true
 opt.spelllang = { "en_us", "cjk" }
 
 --- Single Shot Compile
-vim.keymap.set("n", "<leader>C", ":update<CR>:VimtexCompileSS<CR>", { desc = "Latex Single Shot Compile" })
+-- vim.keymap.set("n", "<leader>C", ":update<CR>:VimtexCompileSS<CR>", { desc = "Latex Single Shot Compile" })

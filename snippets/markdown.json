@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "prefix": "meta",
+    "body": [
+      "---",
+      "title: ${1:note_title}",
+      "",
+      "author: CHEN Zhongpu",
+      "",
+      "date: ${2:date}",
+      "",
+      "CJKmainfont: LXGW WenKai",
+      "---"
+    ],
+    "description": "Meta for PDF output"
+  }
+}
