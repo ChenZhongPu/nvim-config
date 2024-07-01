@@ -14,9 +14,4 @@ function File_Exists(filename)
   return stat ~= nil and stat.type == "file"
 end
 
-C_COMPLIER = {
-  c = "clang",
-  cpp = "clang++",
-}
-
 return global

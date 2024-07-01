@@ -34,4 +34,10 @@ return {
       },
     },
   },
+  {
+    "neovim/nvim-treesitter",
+    opts = function(_, opts)
+      opts.highlight.disable = { "latex" }
+    end,
+  },
 }
