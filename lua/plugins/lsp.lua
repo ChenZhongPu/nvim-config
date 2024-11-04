@@ -21,6 +21,7 @@ return {
     opts = {
       servers = {
         jedi_language_server = {},
+        clojure_lsp = {},
       },
       setup = {
         pyright = function()
