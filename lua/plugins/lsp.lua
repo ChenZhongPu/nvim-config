@@ -41,4 +41,10 @@ return {
       opts.highlight.disable = { "latex" }
     end,
   },
+  {
+    "Olical/conjure",
+    init = function()
+      vim.g["conjure#mapping#log_jump_to_latest"] = false
+    end,
+  },
 }
