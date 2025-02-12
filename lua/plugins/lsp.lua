@@ -21,7 +21,6 @@ return {
     opts = {
       servers = {
         jedi_language_server = {},
-        clojure_lsp = {},
       },
       setup = {
         pyright = function()
@@ -39,12 +38,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts.highlight.disable = { "latex" }
-    end,
-  },
-  {
-    "Olical/conjure",
-    init = function()
-      vim.g["conjure#mapping#log_jump_to_latest"] = false
     end,
   },
 }

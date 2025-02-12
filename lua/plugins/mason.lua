@@ -5,8 +5,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "mypy",
         "jedi-language-server",
-        "joker",
-        "clojure-lsp",
+        "codelldb",
       })
     end,
   },
