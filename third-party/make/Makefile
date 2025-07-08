@@ -1,7 +1,8 @@
 # Compiler and Flags
 CC = gcc
-CFLAGS_Debug = -g -Og -Wall -Wextra -Werror      # Debug: Symbols, no opt, warnings
-CFLAGS_Release = -O3 -DNDEBUG -Wall              # Release: Optimized, no asserts
+#CFLAGS_Debug = -g -O0 -Wall -Wextra -Werror      # Debug: Symbols, no opt, warnings
+CFLAGS_Debug = -g -O0 -Wall -Wextra     # Debug: Symbols, no opt, warnings
+CFLAGS_Release = -O2 -DNDEBUG -Wall              # Release: Optimized, no asserts
 CFLAGS_PROFILE = -pg -Wall -Wextra               # Profile: Profiling
 
 # Project Variables
