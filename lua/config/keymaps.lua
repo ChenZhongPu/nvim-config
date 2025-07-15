@@ -15,18 +15,18 @@
 --   require("dap").step_out()
 -- end)
 
-vim.keymap.set("i", "<M-[>", function()
-  require("copilot.suggestion").prev()
-end)
-
-vim.keymap.set("i", "<M-]>", function()
-  require("copilot.suggestion").next()
-end)
-
-vim.keymap.set("i", "<M-l>", function()
-  require("copilot.suggestion").accept()
-end)
-
-vim.keymap.set("i", "<C-]>", function()
-  require("copilot.suggestion").dismiss()
-end)
+-- vim.keymap.set("i", "<M-[>", function()
+--   require("copilot.suggestion").prev()
+-- end)
+--
+-- vim.keymap.set("i", "<M-]>", function()
+--   require("copilot.suggestion").next()
+-- end)
+--
+-- vim.keymap.set("i", "<M-l>", function()
+--   require("copilot.suggestion").accept()
+-- end)
+--
+-- vim.keymap.set("i", "<C-]>", function()
+--   require("copilot.suggestion").dismiss()
+-- end)
