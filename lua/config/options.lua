@@ -12,3 +12,5 @@ vim.o.foldlevelstart = 10
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.g.lazyvim_picker = "fzf"
+
+vim.g.lazyvim_rust_diagnostics = "bacon-ls"

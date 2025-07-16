@@ -21,7 +21,9 @@ return {
     opts = {
       servers = {
         jedi_language_server = {},
-        racket_langserver = {},
+        rust_analyzer = {
+          mason = false,
+        },
       },
       setup = {
         pyright = function()

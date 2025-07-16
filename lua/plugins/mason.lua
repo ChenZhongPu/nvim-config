@@ -6,6 +6,8 @@ return {
         "mypy",
         "jedi-language-server",
         "codelldb",
+        "bacon",
+        "bacon-ls",
       })
     end,
   },
