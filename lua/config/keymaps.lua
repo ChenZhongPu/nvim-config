@@ -23,10 +23,10 @@
 --   require("copilot.suggestion").next()
 -- end)
 --
--- vim.keymap.set("i", "<M-l>", function()
+-- vim.keymap.set("i", "<M-a>", function()
 --   require("copilot.suggestion").accept()
 -- end)
 --
--- vim.keymap.set("i", "<C-]>", function()
+-- vim.keymap.set("i", "<M-d>", function()
 --   require("copilot.suggestion").dismiss()
 -- end)
