@@ -25,16 +25,16 @@ return {
           mason = false,
         },
       },
-      setup = {
-        pyright = function()
-          require("lazyvim.util").lsp.on_attach(function(client, _)
-            if client.name == "pyright" then
-              -- disable hover in favor of jedi-language-server
-              client.server_capabilities.hoverProvider = false
-            end
-          end)
-        end,
-      },
+      -- setup = {
+      --   pyright = function()
+      --     require("lazyvim.util").lsp.on_attach(function(client, _)
+      --       if client.name == "basedpyright" then
+      --         -- disable hover in favor of jedi-language-server
+      --         client.server_capabilities.hoverProvider = false
+      --       end
+      --     end)
+      --   end,
+      -- },
     },
   },
   {
