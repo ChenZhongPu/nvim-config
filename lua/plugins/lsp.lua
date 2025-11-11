@@ -43,6 +43,14 @@ return {
       opts.highlight.disable = { "latex" }
     end,
   },
+  {
+    "mrcjkb/rustaceanvim",
+    opts = {
+      rocks = {
+        hererocks = true,
+      },
+    },
+  },
   -- {
   --   "Olical/conjure",
   --   ft = { "racket", "scheme" }, -- etc
