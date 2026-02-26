@@ -13,6 +13,15 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    local copy_to_unnamedplus = require("vim.ui.clipboard.osc52").copy("+")
+    copy_to_unnamedplus(vim.v.event.regcontents)
+    local copy_to_unnamed = require("vim.ui.clipboard.osc52").copy("*")
+    copy_to_unnamed(vim.v.event.regcontents)
+  end,
+})
+
 vim.g.lazyvim_picker = "fzf"
 
 vim.g.lazyvim_rust_diagnostics = "bacon-ls"
