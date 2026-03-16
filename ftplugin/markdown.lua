@@ -13,7 +13,7 @@ local fullPathWithoutType = vim.fn.expand("%:p:r")
 vim.keymap.set("n", "<leader>mp", function()
   vim.api.nvim_command("write")
   local command = string.format(
-    "pandoc --pdf-engine=xelatex --highlight-style zenburn -H %s %s -o %s-export.pdf",
+    "pandoc --pdf-engine=xelatex --syntax-highlighting zenburn -H %s %s -o %s-export.pdf",
     mdPath,
     fullPath,
     fullPathWithoutType
