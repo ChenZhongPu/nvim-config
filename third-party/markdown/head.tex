@@ -1,8 +1,25 @@
 \usepackage{fancyvrb,newverbs}
 \usepackage[top=2cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
 
+% tighten the title block generated from YAML title/author/date metadata.
+\usepackage{titling}
+\setlength{\droptitle}{-3em}
+\pretitle{\begin{center}\Large\bfseries}
+\posttitle{\par\end{center}\vspace{-0.4em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.8em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{-1em}}
+
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 \usepackage{hyperref}
+\definecolor{MarkdownUrlColor}{HTML}{005EA8}
+\AtBeginDocument{
+  \let\MarkdownOriginalHref\href
+  \renewcommand{\href}[2]{\MarkdownOriginalHref{#1}{\textcolor{MarkdownUrlColor}{#2}}}
+  \let\MarkdownOriginalUrl\url
+  \renewcommand{\url}[1]{\textcolor{MarkdownUrlColor}{\MarkdownOriginalUrl{#1}}}
+}
 
 % begin a new page for each section (first level header),
 % we need to combine this with `-V subparagraph` when invoking pandc
